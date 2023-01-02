@@ -31,7 +31,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <img src="assets/img/AH-full.png" width="200px" height="50px" alt="" align="center">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -40,13 +39,16 @@
     <!-- Custom styles for this template-->
     <link href="sb-admin/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
+<center>
 
-<body class="bg-gradient-primary">
-    <div class="container">
+<body style="background: #518DB9;">
+    <div class="container mt-4">
 
         <!-- Outer Row -->
+		<img src="assets/img/AH.png" width="200px" height="50px" alt="" class="mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-5 mt-5">
+			
+            <div class="col-md-5">
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
@@ -66,19 +68,25 @@
 								<button class="btn btn-primary btn-block" name="proses" type="submit"><i
 										class="fa fa-lock"></i>
 									SIGN IN</button>
+								
 							</form>
-							<!-- <hr>
+							<hr>
 							<div class="text-center">
 								<a class="small" href="forgot-password.html">Forgot Password?</a>
-							</div>
-							<div class="text-center">
 								<a class="small" href="register.html">Create an Account!</a>
-							</div> -->
+							</div>
 						</div>
                     </div>
                 </div>
             </div>
         </div>
+
+		<div class="row justify-content-center">
+            <div class="col-md-5">
+				<p class="text-white">&#169 2022 Al-Hanif - All Rights Reserved</p>
+			</div>
+		</div>
+
     </div>
     <!-- Bootstrap core JavaScript-->
     <script src="sb-admin/vendor/jquery/jquery.min.js"></script>

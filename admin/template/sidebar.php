@@ -12,7 +12,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <div class="sidebar-brand-icon">
             <i class="fas fa-cash-register"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Al-Hanif Store<sup></sup></div>
@@ -63,9 +63,14 @@
                 <!-- <h6 class="collapse-header">Custom Components:</h6> -->
                 <a class="collapse-item" href="index.php?page=jual">Transaksi Jual</a>
                 <a class="collapse-item" href="index.php?page=laporan">Laporan Penjualan</a>
-                <a class="collapse-item" href="index.php?page=laporan">Kategori Transaksi</a>
+                <a class="collapse-item" href="index.php?page=kategoritransaksi">Kategori Transaksi</a>
             </div>
         </div>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="index.php?page=customer">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Customer</span></a>
     </li>
     <hr class="sidebar-divider">
     <li class="nav-item active">

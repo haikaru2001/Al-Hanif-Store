@@ -31,6 +31,17 @@ if (!empty($_SESSION['admin'])) {
         echo '<script>window.location="../../index.php?page=kategori&uid='.$id.'&success-edit=edit-data"</script>';
     }
 
+    if (!empty($_GET['kategoritransaksi'])) {
+        $nama= htmlentities($_POST['kategoritransaksi']);
+        $id= htmlentities($_POST['id']);
+        $data[] = $nama;
+        $data[] = $id;
+        $sql = 'UPDATE kategori_transaksi SET nama=? WHERE id=?';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=kategoritransaksi&uid='.$id.'&success-edit=edit-data"</script>';
+    }
+
     if (!empty($_GET['stok'])) {
         $restok = htmlentities($_POST['restok']);
         $id = htmlentities($_POST['id']);
@@ -48,6 +59,26 @@ if (!empty($_SESSION['admin'])) {
         $row = $config -> prepare($sql);
         $row -> execute($data);
         echo '<script>window.location="../../index.php?page=barang&success-stok=stok-data"</script>';
+    }
+
+    if (!empty($_GET['customer'])){
+        $id = htmlentities($_POST['id']);
+        $nama = htmlentities($_POST['nama']);
+        $notelp = htmlentities($_POST['notelp']);
+        $alamat = htmlentities($_POST['alamat']);
+        $namatoko = htmlentities($_POST['namatoko']);
+        
+        $data[] = $nama;
+        $data[] = $notelp;
+        $data[] = $alamat;
+        $data[] = $namatoko;
+        $data[] = $id;
+
+        $sql = 'UPDATE customer SET nama=?, notelp=?, 
+				alamat=?, namatoko=?  WHERE id=?';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=customer/edit&customer='.$id.'&success=edit-data"</script>';
     }
 
     if (!empty($_GET['barang'])) {

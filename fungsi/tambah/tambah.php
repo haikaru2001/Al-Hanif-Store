@@ -14,6 +14,36 @@ if (!empty($_SESSION['admin'])) {
         echo '<script>window.location="../../index.php?page=kategori&&success=tambah-data"</script>';
     }
 
+    if (!empty($_GET['kategoritransaksi'])) {
+        $nama= $_POST['kategoritransaksi'];
+        $tgl= date("j F Y, G:i");
+        $data[] = $nama;
+        $data[] = $tgl;
+        $sql = 'INSERT INTO kategori_transaksi (nama,tgl_input) VALUES(?,?)';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=kategoritransaksi&&success=tambah-data"</script>';
+    }
+
+    if (!empty($_GET['customer'])){
+        $id = $_POST['id'];
+        $nama = $_POST['nama'];
+        $notelp = $_POST['notelp'];
+        $alamat = $_POST['alamat'];
+        $namatoko = $_POST['namatoko'];
+
+        $data[] = $id;
+        $data[] = $nama;
+        $data[] = $notelp;
+        $data[] = $alamat;
+        $data[] = $namatoko;
+
+        $sql = 'INSERT INTO customer (id,nama,notelp,alamat,namatoko) 
+			    VALUES (?,?,?,?,?) ';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=customer&success=tambah-data"</script>';
+    }
     if (!empty($_GET['barang'])) {
         $id = $_POST['id'];
         $kategori = $_POST['kategori'];

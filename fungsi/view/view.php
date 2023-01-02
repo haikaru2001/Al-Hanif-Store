@@ -49,6 +49,33 @@ class view
         return $hasil;
     }
 
+    public function kategoritransaksi()
+    {
+        $sql = "select*from kategori_transaksi";
+        $row = $this-> db -> prepare($sql);
+        $row -> execute();
+        $hasil = $row -> fetchAll();
+        return $hasil;
+    }
+
+    public function customer()
+    {
+        $sql = "select*from customer";
+        $row = $this-> db -> prepare($sql);
+        $row -> execute();
+        $hasil = $row -> fetchAll();
+        return $hasil;
+    }
+
+    public function customer_edit($id)
+    {
+        $sql = "select*from customer where id=?";
+        $row = $this-> db -> prepare($sql);
+        $row -> execute(array($id));
+        $hasil = $row -> fetchAll();
+        return $hasil;
+    }
+
     public function barang()
     {
         $sql = "select barang.*, kategori.id_kategori, kategori.nama_kategori

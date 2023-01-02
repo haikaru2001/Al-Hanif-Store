@@ -12,6 +12,15 @@ if (!empty($_SESSION['admin'])) {
         echo '<script>window.location="../../index.php?page=kategori&&remove=hapus-data"</script>';
     }
 
+    if (!empty($_GET['kategoritransaksi'])) {
+        $id= $_GET['id'];
+        $data[] = $id;
+        $sql = 'DELETE FROM kategori_transaksi WHERE id=?';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=kategoritransaksi&&remove=hapus-data"</script>';
+    }
+
     if (!empty($_GET['barang'])) {
         $id= $_GET['id'];
         $data[] = $id;
@@ -19,6 +28,15 @@ if (!empty($_SESSION['admin'])) {
         $row = $config -> prepare($sql);
         $row -> execute($data);
         echo '<script>window.location="../../index.php?page=barang&&remove=hapus-data"</script>';
+    }
+
+    if (!empty($_GET['customer'])) {
+        $id= $_GET['id'];
+        $data[] = $id;
+        $sql = 'DELETE FROM customer WHERE id=?';
+        $row = $config -> prepare($sql);
+        $row -> execute($data);
+        echo '<script>window.location="../../index.php?page=customer&&remove=hapus-data"</script>';
     }
 
     if (!empty($_GET['jual'])) {
