@@ -12,12 +12,23 @@
 				where user =? and pass = md5(?)';
 		$row = $config->prepare($sql);
 		$row -> execute(array($user,$pass));
+		$hasil = $row -> fetch();
 		$jum = $row -> rowCount();
+		
 		if($jum > 0){
-			$hasil = $row -> fetch();
 			$_SESSION['admin'] = $hasil;
 			echo '<script>alert("Login Sukses");window.location="index.php"</script>';
-		}else{
+		}
+		elseif ($user == "" || $pass == "") {
+			echo '<script>alert("Username dan password tidak boleh kosong");history.go(-1);</script>';
+		}
+		elseif ($user != $hasil['user']) {
+			echo '<script>alert("Username salah");history.go(-1);</script>';
+		}
+		elseif ($pass != $hasil['pass']) {
+			echo '<script>alert("Password salah");history.go(-1);</script>';
+		}
+		else{
 			echo '<script>alert("Login Gagal");history.go(-1);</script>';
 		}
 	}

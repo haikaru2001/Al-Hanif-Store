@@ -80,23 +80,41 @@ if (!empty($_SESSION['admin'])) {
         $row->execute(array($id));
         $hsl = $row->fetch();
 
+        $sql2 = 'SELECT * FROM penjualan';
+        $row2 = $config->prepare($sql2);
+        $row2->execute();
+        $hsl2= $row2->fetch();
+
         if ($hsl['stok'] > 0) {
-            $kasir =  $_GET['id_kasir'];
-            $jumlah = 1;
-            $total = $hsl['harga_jual'];
-            $tgl = date("j F Y, G:i");
+            if($id != $hsl2['id_barang']){
+                $kasir =  $_GET['id_kasir'];
+                $jumlah = 1;
+                $total = $hsl['harga_jual'];
+                $tgl = date("j F Y, G:i");
+                
 
-            $data1[] = $id;
-            $data1[] = $kasir;
-            $data1[] = $jumlah;
-            $data1[] = $total;
-            $data1[] = $tgl;
+                $data1[] = $id;
+                $data1[] = $kasir;
+                $data1[] = $jumlah;
+                $data1[] = $total;
+                $data1[] = $tgl;
+                
 
-            $sql1 = 'INSERT INTO penjualan (id_barang,id_member,jumlah,total,tanggal_input) VALUES (?,?,?,?,?)';
-            $row1 = $config -> prepare($sql1);
-            $row1 -> execute($data1);
+                $sql1 = 'INSERT INTO penjualan (id_barang,id_member,jumlah,total,tanggal_input) VALUES (?,?,?,?,?)';
+                $row1 = $config -> prepare($sql1);
+                $row1 -> execute($data1);
 
-            echo '<script>window.location="../../index.php?page=jual&success=tambah-data"</script>';
+                echo '<script>window.location="../../index.php?page=jual&success=tambah-data"</script>';
+            }
+            else{
+                $adding[] = $hsl2['jumlah']+1;
+                $adding[] = $hsl2['id_barang'];
+
+                $sql3 = 'UPDATE penjualan SET jumlah=? WHERE id_barang=?';
+                $row3 = $config -> prepare($sql3);
+                $row3 -> execute($adding);
+                echo '<script>window.location="../../index.php?page=jual&success=tambah-data"</script>';
+            }
         } else {
             echo '<script>alert("Stok Barang Anda Telah Habis !");
 					window.location="../../index.php?page=jual#keranjang"</script>';

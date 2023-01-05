@@ -114,7 +114,7 @@ class view
     {
         $sql = "select barang.*, kategori.id_kategori, kategori.nama_kategori
                 from barang inner join kategori on barang.id_kategori = kategori.id_kategori
-                where id_barang like '%$cari%' or nama_barang like '%$cari%' or merk like '%$cari%'";
+                where id_barang like '%$cari%' or nama_barang like '%$cari%' or merk like '%$cari%' or nama_kategori like '%$cari%'";
         $row = $this-> db -> prepare($sql);
         $row -> execute();
         $hasil = $row -> fetchAll();

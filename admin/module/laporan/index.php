@@ -148,6 +148,7 @@
 								<th style="width:10%;"> Total</th>
 								<th> Kasir</th>
 								<th> Tanggal Input</th>
+								<th> Transaksi di</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -187,6 +188,7 @@
 								<td>Rp.<?php echo number_format($isi['total']);?>,-</td>
 								<td><?php echo $isi['nm_member'];?></td>
 								<td><?php echo $isi['tanggal_input'];?></td>
+								<td><?php echo $isi['kategori_transaksi'];?></td>
 							</tr>
 							<?php $no++; }?>
 						</tbody>

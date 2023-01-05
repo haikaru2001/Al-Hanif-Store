@@ -37,6 +37,9 @@
 					<h5><i class="fa fa-list"></i> Hasil Pencarian</h5>
 				</div>
 				<div class="card-body">
+					<?php
+					//  if(!empty())
+					 ?>
 					<div class="table-responsive">
 						<div id="hasil_cari"></div>
 						<div id="tunggu"></div>
@@ -61,6 +64,21 @@
 							<tr>
 								<td><b>Tanggal</b></td>
 								<td><input type="text" readonly="readonly" class="form-control" value="<?php echo date("j F Y, G:i");?>" name="tgl"></td>
+							</tr>
+
+							<tr>
+								<td><b>Kategori Transaksi</b></td>
+								<td>
+									<select class="form-control" name="ktrans">
+										
+										<?php 
+										$ktrans = $lihat -> kategoritransaksi();
+										foreach($ktrans as $isi){
+										?>
+										<option value="<?php echo $isi['id'];?>"><?php echo $isi['nama']; ?></option>
+										<?php }?>
+									</select>
+								</td>
 							</tr>
 						</table>
 						<table class="table table-bordered w-100" id="example1">
@@ -121,12 +139,13 @@
 										$total = $_POST['total1'];
 										$tgl_input = $_POST['tgl_input'];
 										$periode = $_POST['periode'];
+										$ktrans = $_POST['ktrans'];
 										$jumlah_dipilih = count($id_barang);
 										
 										for($x=0;$x<$jumlah_dipilih;$x++){
 
-											$d = array($id_barang[$x],$id_member[$x],$jumlah[$x],$total[$x],$tgl_input[$x],$periode[$x]);
-											$sql = "INSERT INTO nota (id_barang,id_member,jumlah,total,tanggal_input,periode) VALUES(?,?,?,?,?,?)";
+											$d = array($id_barang[$x],$id_member[$x],$jumlah[$x],$total[$x],$tgl_input[$x],$periode[$x],$ktrans[$x]);
+											$sql = "INSERT INTO nota (id_barang,id_member,jumlah,total,tanggal_input,periode, kategori_transaksi) VALUES(?,?,?,?,?,?,?)";
 											$row = $config->prepare($sql);
 											$row->execute($d);
 
@@ -160,6 +179,7 @@
 									<input type="hidden" name="jumlah[]" value="<?php echo $isi['jumlah'];?>">
 									<input type="hidden" name="total1[]" value="<?php echo $isi['total'];?>">
 									<input type="hidden" name="tgl_input[]" value="<?php echo $isi['tanggal_input'];?>">
+									<input type="hidden" name="kategori_transaksi[]" value="">
 									<input type="hidden" name="periode[]" value="<?php echo date('m-Y');?>">
 								<?php $no++; }?>
 								<tr>
@@ -216,6 +236,8 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	$(".bayar").on(change)
 });
-//To select country name
+
 </script>
