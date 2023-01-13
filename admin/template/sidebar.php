@@ -101,8 +101,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
-            <img src="assets/img/AH-biru.png" width="150px" height="41px" alt="" class="mt-1
-            ">
+            <img src="assets/img/AH-biru.png" width="119px" height="33px" alt="" class="mt-1">
             <!-- <h5 class="d-lg-block d-none mt-2"><b><?php echo $toko['nama_toko'];?>, <?php echo $toko['alamat_toko'];?></b></h5> -->
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -112,10 +111,10 @@
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <img class="img-profile rounded-circle"
+                        <img class="img-profile rounded-circle" 
                             src="assets/img/user/<?php echo $hasil_profil['gambar'];?>">
                         <span
-                            class="mr-2 d-none d-lg-inline text-gray-600 small ml-2"><?php echo $hasil_profil['nm_member'];?></span>
+                            class="mr-2 d-none d-lg-inline text-gray-900 medium ml-2"><?php echo $hasil_profil['nm_member'];?></span>
                         <i class="fas fa-angle-down"></i>
                     </a>
                     <!-- Dropdown - User Information -->
