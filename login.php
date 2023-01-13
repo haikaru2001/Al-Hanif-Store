@@ -56,7 +56,7 @@
     <div class="container mt-4">
 
         <!-- Outer Row -->
-		<img src="assets/img/AH.png" width="200px" height="50px" alt="" class="mt-5">
+		<img src="assets/img/AH.png" width="300px" height="83px" alt="" class="mt-5">
         <div class="row justify-content-center">
 			
             <div class="col-md-5">
