@@ -210,7 +210,8 @@ if (!empty($_SESSION['admin'])) {
 
     if (!empty($_GET['cari_barang'])) {
         $cari = trim(strip_tags($_POST['keyword']));
-        if ($cari == '') {
+        if (empty($cari)) {
+            
         } else {
             $sql = "select barang.*, kategori.id_kategori, kategori.nama_kategori
 					from barang inner join kategori on barang.id_kategori = kategori.id_kategori

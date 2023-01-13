@@ -51,7 +51,7 @@
                             <td><?php echo $isi['namatoko'];?></td>
                             <td>
 
-                                <a href="index.php?page=customer/edit&id=<?php echo $isi['id'];?>"><button
+                                <a href="index.php?page=customer/edit&customer=<?php echo $isi['id'];?>"><button
                                         class="btn btn-warning btn-xs">Edit</button></a>
                                 <a href="fungsi/hapus/hapus.php?customer=hapus&id=<?php echo $isi['id'];?>"
                                     onclick="javascript:return confirm('Hapus Data costumer ?');"><button

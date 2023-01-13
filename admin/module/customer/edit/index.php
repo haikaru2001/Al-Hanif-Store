@@ -5,8 +5,9 @@
       *********************************************************************************************************************************************************** -->
  <!--main content start-->
  <?php 
-	$id = $_GET['id'];
+	$id = $_GET['customer'];
 	$hasil = $lihat -> customer_edit($id);
+	// echo $hasil['nama'];
 ?>
  <a href="index.php?page=customer" class="btn btn-primary mb-3"><i class="fa fa-angle-left"></i> Balik </a>
  <h4>Edit Barang</h4>

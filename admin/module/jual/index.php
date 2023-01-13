@@ -42,6 +42,33 @@
 					 ?>
 					<div class="table-responsive">
 						<div id="hasil_cari"></div>
+						<div id="tanpa_cari">
+						
+						<table class="table table-stripped" width="100%" id="example2">
+							<tr>
+								<th>ID Barang</th>
+								<th>Nama Barang</th>
+								<th>Merk</th>
+								<th>Harga Jual</th>
+								<th>Aksi</th>
+							</tr>
+						<?php
+						$hasil1=$lihat->default_cari();
+						foreach ($hasil1 as $hasil) {?>
+							<tr>
+								<td><?php echo $hasil['id_barang'];?></td>
+								<td><?php echo $hasil['nama_barang'];?></td>
+								<td><?php echo $hasil['merk'];?></td>
+								<td><?php echo $hasil['harga_jual'];?></td>
+								<td>
+								<a href="fungsi/tambah/tambah.php?jual=jual&id=<?php echo $hasil['id_barang'];?>&id_kasir=<?php echo $_SESSION['admin']['id_member'];?>" 
+									class="btn btn-success">
+									<i class="fa fa-shopping-cart"></i></a></td>
+							</tr>
+						<?php }?>
+						</table>
+				
+						</div>
 						<div id="tunggu"></div>
 					</div>
 				</div>
@@ -178,7 +205,7 @@
 									<input type="hidden" name="id_member[]" value="<?php echo $isi['id_member'];?>">
 									<input type="hidden" name="jumlah[]" value="<?php echo $isi['jumlah'];?>">
 									<input type="hidden" name="total1[]" value="<?php echo $isi['total'];?>">
-									<input type="hidden" name="tgl_input[]" value="<?php echo $isi['tanggal_input'];?>">
+									<input type="hidden" name="tgl_input[]" value="<?php echo date('j F Y, G:i');?>">
 									<input type="hidden" name="kategori_transaksi[]" value="">
 									<input type="hidden" name="periode[]" value="<?php echo date('m-Y');?>">
 								<?php $no++; }?>
@@ -231,13 +258,14 @@ $(document).ready(function(){
 			},
 			success: function(html){
 				$("#tunggu").html('');
+				$("#tanpa_cari").hide();
 				$("#hasil_cari").show();
 				$("#hasil_cari").html(html);
 			}
 		});
 	});
 
-	$(".bayar").on(change)
+
 });
 
 </script>

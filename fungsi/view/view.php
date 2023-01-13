@@ -121,6 +121,15 @@ class view
         return $hasil;
     }
 
+    public function default_cari()
+    {
+        $sql = "select barang.*, kategori.id_kategori, kategori.nama_kategori
+                from barang inner join kategori on barang.id_kategori = kategori.id_kategori";
+        $row = $this-> db -> prepare($sql);
+        $row -> execute();
+        $hasil = $row -> fetchAll();
+        return $hasil;
+    }
     public function barang_id()
     {
         $sql = 'SELECT * FROM barang ORDER BY id DESC';
