@@ -194,7 +194,6 @@
                                             <option value="#">Pilih Satuan</option>
                                             <option value="PCS">PCS</option>
                                             <option value="Gram">Gram</option>
-                                            <option value="PCS">PCS</option>
                                         </select>
                                     </td>
                                 </tr>

@@ -66,6 +66,7 @@
 							</option>
 							<option value="#">Pilih Satuan</option>
 							<option value="PCS">PCS</option>
+							<option value="Gram">Gram</option>
 						</select>
 					</td>
 				</tr>
