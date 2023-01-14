@@ -11,12 +11,12 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color : #518DB9;">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+    <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
             <i class="fas fa-cash-register"></i>
         </div>
         <div class="sidebar-brand-text mx-3">Al-Hanif Store<sup></sup></div>
-    </a>
+    </a> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -101,7 +101,9 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
-            <h5 class="d-lg-block d-none mt-2"><b><?php echo $toko['nama_toko'];?>, <?php echo $toko['alamat_toko'];?></b></h5>
+            <!-- <h5 class="d-lg-block d-none mt-2"><b><?php echo $toko['nama_toko'];?>, <?php echo $toko['alamat_toko'];?></b></h5> -->
+            <img src="assets/img/AH-biru.png" width="119px" height="33px" alt="" class="mt-1">
+
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- <div class="topbar-divider d-none d-sm-block"></div> -->
@@ -113,7 +115,7 @@
                         <img class="img-profile rounded-circle"
                             src="assets/img/user/<?php echo $hasil_profil['gambar'];?>">
                         <span
-                            class="mr-2 d-none d-lg-inline text-gray-600 small ml-2"><?php echo $hasil_profil['nm_member'];?></span>
+                            class="mr-2 d-none d-lg-inline text-gray-900 small ml-2"><?php echo $hasil_profil['nm_member'];?></span>
                         <i class="fas fa-angle-down"></i>
                     </a>
                     <!-- Dropdown - User Information -->
