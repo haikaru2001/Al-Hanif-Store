@@ -193,8 +193,7 @@
                                         <select name="satuan" class="form-control" required>
                                             <option value="#">Pilih Satuan</option>
                                             <option value="PCS">PCS</option>
-                                            <option value="Gram">Gram</option>
-                                            <option value="PCS">PCS</option>
+                                            <option value="KG">KG</option>
                                         </select>
                                     </td>
                                 </tr>

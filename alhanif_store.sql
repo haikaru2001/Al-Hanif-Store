@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2023 at 05:21 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Jan 14, 2023 at 04:31 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `id_barang`, `id_kategori`, `nama_barang`, `merk`, `harga_beli`, `harga_jual`, `satuan_barang`, `stok`, `tgl_input`, `tgl_update`) VALUES
-(1, 'BR001', 1, 'Gamis putih motif batik -v1', 'uniclo', '130000', '150000', 'PCS', '30', '22 December 2022, 17:35', NULL);
+(4, 'BR001', 1, 'Gamis Putih Motif Batik -v1', 'Uniqlo', '130000', '150000', 'PCS', '30', '14 January 2023, 9:49', NULL),
+(5, 'BR002', 2, 'Kurma Ajwa', 'Al-Madinah', '150000', '170000', 'KG', '6', '14 January 2023, 9:49', '14 January 2023, 10:00');
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id_member`, `nm_member`, `alamat_member`, `telepon`, `email`, `gambar`, `NIK`) VALUES
-(1, 'Arifin', 'uj harapan', '081234567890', 'example@gmail.com', '1671612103WhatsApp Image 2022-11-17 at 10.21.55.jpeg', '12314121');
+(1, 'Arifin', 'uj harapan', '081234567890', 'example@gmail.com', '16736667272022-10-29 21-09-43.mp4_snapshot_05.14.000 (2).jpg', '12314121');
 
 -- --------------------------------------------------------
 
@@ -310,7 +311,7 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -358,7 +359,7 @@ ALTER TABLE `nota`
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `toko`
