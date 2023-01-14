@@ -7,7 +7,7 @@
 <?php 
 	$id = $_SESSION['admin']['id_member'];
 	$hasil = $lihat -> member_edit($id);
-	$trans =1;
+	$trans = 1;
 ?>
 <script>
 $("#ktrans").on("change",function(){
@@ -220,7 +220,7 @@ $("#ktrans").on("change",function(){
 									<td><input type="text" class="form-control" name="bayar" value="<?php echo $bayar;?>"></td>
 									<td><button class="btn btn-success"><i class="fa fa-shopping-cart"></i> Bayar</button>
 									<?php  if(!empty($_GET['nota'] == 'yes')) {?>
-										<a class="btn btn-danger" href="fungsi/hapus/hapus.php?penjualan=jual">
+										<a class="btn btn-danger" href="fungsi/hapus/hapus.php?penjualan=jual" onclick="javascript:return confirm('Hapus Data barang ?');">
 										<b>RESET</b></a></td><?php }?></td>
 								</tr>
 							</form>
