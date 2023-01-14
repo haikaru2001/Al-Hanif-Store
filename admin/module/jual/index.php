@@ -7,7 +7,14 @@
 <?php 
 	$id = $_SESSION['admin']['id_member'];
 	$hasil = $lihat -> member_edit($id);
+	$trans =1;
 ?>
+<script>
+$("#ktrans").on("change",function(){
+	$trans = $("#ktrans").val();
+	console.log($trans);
+});
+</script>
 	<h4>Keranjang Penjualan</h4>
 	<br>
 	<?php if(isset($_GET['success'])){?>
@@ -37,9 +44,7 @@
 					<h5><i class="fa fa-list"></i> Hasil Pencarian</h5>
 				</div>
 				<div class="card-body">
-					<?php
-					//  if(!empty())
-					 ?>
+
 					<div class="table-responsive">
 						<div id="hasil_cari"></div>
 						<div id="tanpa_cari">
@@ -96,8 +101,7 @@
 							<tr>
 								<td><b>Kategori Transaksi</b></td>
 								<td>
-									<select class="form-control" name="ktrans">
-										
+									<select class="form-control" name="ktrans" id="ktrans">
 										<?php 
 										$ktrans = $lihat -> kategoritransaksi();
 										foreach($ktrans as $isi){
@@ -166,12 +170,12 @@
 										$total = $_POST['total1'];
 										$tgl_input = $_POST['tgl_input'];
 										$periode = $_POST['periode'];
-										$ktrans = $_POST['ktrans'];
+										// $ktrans = $_POST['ktrans'];
 										$jumlah_dipilih = count($id_barang);
 										
 										for($x=0;$x<$jumlah_dipilih;$x++){
 
-											$d = array($id_barang[$x],$id_member[$x],$jumlah[$x],$total[$x],$tgl_input[$x],$periode[$x],$ktrans[$x]);
+											$d = array($id_barang[$x],$id_member[$x],$jumlah[$x],$total[$x],$tgl_input[$x],$periode[$x],$trans);
 											$sql = "INSERT INTO nota (id_barang,id_member,jumlah,total,tanggal_input,periode, kategori_transaksi) VALUES(?,?,?,?,?,?,?)";
 											$row = $config->prepare($sql);
 											$row->execute($d);
@@ -206,7 +210,6 @@
 									<input type="hidden" name="jumlah[]" value="<?php echo $isi['jumlah'];?>">
 									<input type="hidden" name="total1[]" value="<?php echo $isi['total'];?>">
 									<input type="hidden" name="tgl_input[]" value="<?php echo date('j F Y, G:i');?>">
-									<input type="hidden" name="kategori_transaksi[]" value="">
 									<input type="hidden" name="periode[]" value="<?php echo date('m-Y');?>">
 								<?php $no++; }?>
 								<tr>
@@ -264,6 +267,8 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	
 
 
 });
