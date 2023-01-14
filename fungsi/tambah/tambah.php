@@ -107,10 +107,12 @@ if (!empty($_SESSION['admin'])) {
                 echo '<script>window.location="../../index.php?page=jual&success=tambah-data"</script>';
             }
             else{
-                $adding[] = $hsl2['jumlah']+1;
+                $qtytemp = $hsl2['jumlah']+1;
+                $adding[] = $qtytemp;
+                $adding[] = $hsl['harga_jual']*$qtytemp;
                 $adding[] = $hsl2['id_barang'];
-
-                $sql3 = 'UPDATE penjualan SET jumlah=? WHERE id_barang=?';
+                
+                $sql3 = 'UPDATE penjualan SET jumlah=?, total=? WHERE id_barang=?';
                 $row3 = $config -> prepare($sql3);
                 $row3 -> execute($adding);
                 echo '<script>window.location="../../index.php?page=jual&success=tambah-data"</script>';
